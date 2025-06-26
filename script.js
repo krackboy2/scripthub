@@ -105,14 +105,17 @@ async function fetchScripts() {
 function displayScripts() {
     scriptsContainer.innerHTML = '';
 
-    let imageUrl = script.game.imageUrl;
+    const scriptsToShow = currentScripts;
+
+    scriptsToShow.forEach((script) => {
+        let imageUrl = script.game.imageUrl;
         if (imageUrl && !imageUrl.includes('rbxcdn')) {
             imageUrl = `https://scriptblox.com${script.game.imageUrl}`;
         }
 
         const scriptCard = document.createElement('div');
         scriptCard.className = 'script-card';
-        scriptCard.style.animationDelay = `${index * 0.1}s`;
+        scriptCard.style.animationDelay = `${2 * 0.1}s`;
 
         scriptCard.innerHTML = `
     <img src="${imageUrl || 'placeholder.png'}" alt="${script.title}" onerror="this.src='https://via.placeholder.com/300x150'">
@@ -148,6 +151,7 @@ function displayScripts() {
         });
 
         scriptsContainer.appendChild(scriptCard);
+    });
 }
 
 function updatePaginationButtons() {
