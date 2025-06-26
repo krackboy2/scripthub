@@ -43,11 +43,9 @@ async function searchScripts(query) {
         currentScripts = data.result.scripts;
         displayScripts();
         updatePaginationButtons();
-        updateStats();
         return currentScripts;
     } catch (error) {
         console.error('Error fetching scripts:', error);
-        alert('Error fetching scripts. Please try again.');
     } finally {
         if (loaderContainer) {
             loaderContainer.classList.remove('active');
@@ -95,7 +93,6 @@ async function fetchScripts() {
         return currentScripts;
     } catch (error) {
         console.error('Error fetching scripts:', error);
-        alert('Error fetching scripts. Please try again.');
     } finally {
         if (loaderContainer) {
             loaderContainer.classList.remove('active');
@@ -221,17 +218,6 @@ window.addEventListener('load', () => {
     });
 });
 
-function updateStats() {
-    const gameCount = document.getElementById('gameCount');
-
-    const uniqueGames = new Set(currentScripts.map(script => script.game.name));
-    if(currentScripts.length != 0 && uniqueGames.size != 0){
-        gameCount.textContent = `${uniqueGames.size} Games`;
-    }
-    else{
-        gameCount.textContent = `- Games`;
-    }
-}
 function showToast(message, type) {
     const container = document.querySelector('.toast-container');
         const toast = document.createElement('div');
