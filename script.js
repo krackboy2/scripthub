@@ -1,5 +1,4 @@
 let currentPage = 1;
-const scriptsPerPage = 50;
 let currentScripts = [];
 
 const searchInput = document.getElementById('searchInput');
@@ -106,12 +105,7 @@ async function fetchScripts() {
 function displayScripts() {
     scriptsContainer.innerHTML = '';
 
-    const startIndex = (currentPage - 1) * scriptsPerPage;
-    const endIndex = startIndex + scriptsPerPage;
-    const scriptsToShow = currentScripts.slice(startIndex, endIndex);
-
-    scriptsToShow.forEach((script, index) => {
-        let imageUrl = script.game.imageUrl;
+    let imageUrl = script.game.imageUrl;
         if (imageUrl && !imageUrl.includes('rbxcdn')) {
             imageUrl = `https://scriptblox.com${script.game.imageUrl}`;
         }
@@ -154,11 +148,10 @@ function displayScripts() {
         });
 
         scriptsContainer.appendChild(scriptCard);
-    });
 }
 
 function updatePaginationButtons() {
-    const maxPages = Math.ceil(currentScripts.length / scriptsPerPage);
+    const maxPages = currentScripts.length;
     prevBtn.disabled = currentPage === 1;
     if(maxPages == 0){
         nextBtn.disabled = true;
@@ -190,7 +183,7 @@ prevBtn.addEventListener('click', () => {
 });
 
 nextBtn.addEventListener('click', () => {
-    const maxPages = Math.ceil(currentScripts.length / scriptsPerPage);
+    const maxPages = currentScripts.length;
     if (currentPage < maxPages) {
         currentPage++;
         displayScripts();
