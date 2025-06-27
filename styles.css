@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root {
     --primary-bg: #1d2122;
     --secondary-bg: #1e2426;
     --accent-color: #242a2d; /* Blackish accent color */
     --text-color: #ffffff;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 * {
@@ -12,7 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik';
 }
 
 body {
@@ -77,12 +81,12 @@ input[type="text"] {
     border: none;
     border-radius: 5px;
     background-color: var(--secondary-bg);
-    color: var(--text-color);
+    color: #c7c7c7;
     transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
-    outline: 2px solid var(--accent-color);
+    outline: none;
     box-shadow: 0 0 0 3px rgba(38, 38, 38, 0.3); /* Blackish glow */
 }
 
@@ -151,7 +155,7 @@ button:disabled {
     background: var(--accent-color);
     width: 100%;
     padding: 0.8rem;
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -314,8 +318,7 @@ button:disabled {
 }
 
 .copy-btn:hover {
-    background: #2f383d; /* Adjusted hover color */
-    transform: translateY(-2px) !important;
+    background: #282f32; /* Adjusted hover color */
 }
 
 .copy-btn i {
@@ -410,15 +413,15 @@ button:disabled {
 }
 
 .badge.views {
-    background: #1d2122; /* Blackish background */
+    backdrop-filter: blur(5px);
+    background: #29343645; /* Blackish background */
     color: #f0f0f0; /* Light gray for better readability */
-    border: 1px solid #1d2122; /* Subtle border */
 }
 
 .badge.universal {
-    background: #1d2122; /* Blackish background */
+    backdrop-filter: blur(5px);
+    background: #29343645; /* Blackish background */
     color: #f0f0f0; /* Light gray for better readability */
-    border: 1px solid #1d2122; /* Subtle border */
 }
 
 ::-webkit-scrollbar {
@@ -448,8 +451,8 @@ button:disabled {
     left: 0;
     right: 0;
     bottom: 0;
-    background: transparent;
-    backdrop-filter: blur(100px);
+    background: rgba(16, 16, 16, 0);
+    backdrop-filter: blur(20px);
     z-index: 1000;
     backdrop-filter: blur(4px);
     transition: 0.3s ease, backdrop-filter 0.3s ease;
@@ -463,7 +466,7 @@ button:disabled {
 .loader {
     width: 48px;
     height: 48px;
-    border: 3px solid #fff;
+    border: 3px solid var(--secondary-bg);
     border-radius: 50%;
     display: inline-block;
     position: relative;

@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style type="text/css">
-		@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
 		:root {
 			/* replace 'img_url' with your animated image or regular image link */
 			--url: url("");
@@ -27,14 +25,13 @@
 			}
 	
 			.toast {
-				padding: 16px 24px 16px 40px;
+				padding: 12px 24px 12px 40px;
 				margin: 14px;
-				border-radius: 10px;
+				border-radius: 4px;
 				color: white;
-				font-family: 'Rubik', sans-serif;
-				font-size: 14px;
+				font-family: 'Inter', sans-serif;
+				font-size: 16px;
 				opacity: 0;
-				backdrop-filter: blur(5px);
 				transform: translateX(50px);
 				filter: blur(8px);
 				transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -133,12 +130,8 @@
                         <div class="loader"></div>
                     </div>
                     <div class="input-container">
-                        <i class="fas fa-search search-icon"></i>
+                        <i style="margin-top: -1px;margin-left: 48px;" class="fas fa-search search-icon"></i>
                         <input type="text" id="searchInput" placeholder="Powered by scriptblox.com">
-                    </div>
-                    <div class="pagination">
-                        <button id="prevBtn" disabled><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.31-5.522a1.75 1.75 0 0 1 0-2.634l6.31-5.522c.808-.707 2.073-.133 2.073.941v11.796Z" fill="#ffffff"/></svg></button>
-                        <button id="nextBtn" disabled><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17.898c0 1.074 1.265 1.648 2.073.941l6.31-5.522a1.75 1.75 0 0 0 0-2.634l-6.31-5.522C10.265 4.454 9 5.028 9 6.102v11.796Z" fill="#ffffff"/></svg></button>
                     </div>
                 </div>
             </div>
