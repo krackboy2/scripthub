@@ -41,7 +41,6 @@ async function searchScripts(query) {
         return currentScripts;
     } catch (error) {
         console.error('Error fetching scripts:', error);
-        alert('Error fetching scripts. Please try again.');
     } finally {
         if (loaderContainer) {
             loaderContainer.classList.remove('active');
