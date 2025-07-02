@@ -38,7 +38,6 @@ async function searchScripts(query) {
 
         currentScripts = data.result.scripts;
         displayScripts();
-        updateStats();
         return currentScripts;
     } catch (error) {
         console.error('Error fetching scripts:', error);
@@ -131,21 +130,6 @@ window.addEventListener('load', () => {
         showToast("Script Hub Initialized!", "success")
     }, 2000);
 });
-
-function updateStats() {
-    const scriptCount = document.getElementById('scriptCount');
-    const gameCount = document.getElementById('gameCount');
-
-    const uniqueGames = new Set(currentScripts.map(script => script.game.name));
-    if(currentScripts.length != 0 && uniqueGames.size != 0){
-        scriptCount.textContent = `${currentScripts.length} Scripts`;
-        gameCount.textContent = `${uniqueGames.size} Games`;
-    }
-    else{
-        scriptCount.textContent = `- Scripts`;
-        gameCount.textContent = `- Games`;
-    }
-}
 
 function showToast(message, type) {
     const container = document.querySelector('.toast-container');
