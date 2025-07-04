@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --primary-bg: #1d2122;
-    --secondary-bg: #1e2426;
-    --accent-color: #242a2d; /* Blackish accent color */
+    --primary-bg: #222222;
+    --secondary-bg: #262626;
+    --accent-color: #2b2b2b; /* Blackish accent color */
     --text-color: #ffffff;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
     -webkit-user-select: none;
@@ -226,7 +226,7 @@ button:disabled {
 
 #searchInput:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(38, 38, 38, 0.5); /* Blackish glow */
+    box-shadow: 0 0 0 3px rgba(43, 43, 43, 0.7); /* Blackish glow */
 }
 
 #searchBtn {
