@@ -318,7 +318,7 @@ button:disabled {
 }
 
 .copy-btn:hover {
-    background: #282f32; /* Adjusted hover color */
+    background: #363636; /* Adjusted hover color */
 }
 
 .copy-btn i {
@@ -414,13 +414,13 @@ button:disabled {
 
 .badge.views {
     backdrop-filter: blur(5px);
-    background: #29343645; /* Blackish background */
+    background: #3c3c3c45; /* Blackish background */
     color: #f0f0f0; /* Light gray for better readability */
 }
 
 .badge.universal {
     backdrop-filter: blur(5px);
-    background: #29343645; /* Blackish background */
+    background: #3c3c3c45; /* Blackish background */
     color: #f0f0f0; /* Light gray for better readability */
 }
 
